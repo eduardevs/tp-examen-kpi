@@ -23,6 +23,7 @@ Ce projet a été réalisé et testé sur l’environnement suivant :
 
 Details de la structure :
 
+```
 ca/
 ├── root/                       # Répertoire de l'autorité racine
 │   ├── certs/                  # Certificats émis par la Root CA
@@ -43,8 +44,7 @@ ca/
     ├── serial                 # Numérotation des certificats
     ├── crlnumber              # Numérotation des CRL
     └── ca-chain.cert.pem      # Chaîne de certificats à fournir au client
-
-
+```
 
 
 ## 👤 Auteur
