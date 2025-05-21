@@ -21,3 +21,33 @@ Ce projet a été réalisé et testé sur l’environnement suivant :
 - 🧠 Connaissances de base en Linux et sécurité des certificats
 
 
+Details de la structure :
+
+ca/
+├── root/                       # Répertoire de l'autorité racine
+│   ├── certs/                 # Certificats émis par la Root CA
+│   ├── private/               # Clés privées (permissions strictes)
+│   ├── newcerts/              # Certificats délivrés (indexés)
+│   ├── openssl.cnf            # Fichier de configuration OpenSSL pour la racine
+│   ├── index.txt              # Base de données des certificats
+│   ├── serial                 # Numéro de série incrémental
+│   └── crlnumber              # Numéro de série pour les CRL
+│
+├── intermediate/              # Répertoire de l'autorité intermédiaire
+│   ├── certs/                 # Certificats émis par l’intermédiaire
+│   ├── csr/                   # Requêtes de signature (CSR)
+│   ├── newcerts/              # Certificats délivrés
+│   ├── private/               # Clés privées (intermédiaire, serveur, utilisateur)
+│   ├── openssl.cnf            # Fichier de configuration OpenSSL intermédiaire
+│   ├── index.txt              # Base de données des certificats
+│   ├── serial                 # Numérotation des certificats
+│   ├── crlnumber              # Numérotation des CRL
+│   └── ca-chain.cert.pem      # Chaîne de certificats à fournir au client
+
+
+
+## 👤 Auteur
+
+Eduardo Pina  
+TP réalisé dans le cadre d’un cours de sécurité des systèmes  
+Année 2025
