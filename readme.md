@@ -6,8 +6,7 @@ Ce projet met en œuvre une Infrastructure à Clé Publique (PKI) complète bas�
 
 Ce TP est un exemple pratique de création et d'utilisation d'une chaîne de confiance dans un environnement sécurisé.
 
-# Structure :
-- ca : Regroupe l'infrastructure hiérarchique du KPI
+# DOCS :
 - Rapport de mise (PKI) - Eduardo PINA .pdf
 
 
@@ -21,7 +20,7 @@ Ce projet a été réalisé et testé sur l’environnement suivant :
 - 🧠 Connaissances de base en Linux et sécurité des certificats
 
 
-Details de la structure :
+## Détails de la structure :
 
 ```
 ca/
