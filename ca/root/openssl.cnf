@@ -1,0 +1,41 @@
+[ ca ]
+default_ca = CA_default
+[ CA_default ]
+dir               = /root/ca/root
+certs             = $dir/certs
+crl_dir           = $dir/crl
+new_certs_dir     = $dir/newcerts
+database          = $dir/index.txt
+serial            = $dir/serial
+crlnumber         = $dir/crlnumber
+RANDFILE          = $dir/private/.rand
+private_key       = $dir/private/ca.key.pem
+certificate       = $dir/certs/ca.cert.pem
+crl               = $dir/crl/ca.crl.pem
+crl_extensions    = crl_ext
+default_crl_days  = 30
+default_md        = sha256
+name_opt          = ca_default
+cert_opt          = ca_default
+default_days      = 375
+preserve          = no
+policy            = policy_strict
+[ policy_strict ]
+countryName             = match
+stateOrProvinceName     = match
+organizationName        = match
+organizationalUnitName  = optional
+commonName              = supplied
+emailAddress            = optional
+[ req ]
+default_bits        = 4096
+default_md          = sha256
+prompt              = no
+distinguished_name  = req_distinguished_name
+[ req_distinguished_name ]
+countryName         = FR
+stateOrProvinceName = Occitanie
+organizationName    = Eduardo Pina - Inc
+commonName          = Mon CA Racine
+[ crl_ext ]
+authorityKeyIdentifier=keyid:always

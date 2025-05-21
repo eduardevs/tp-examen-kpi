@@ -1,0 +1,60 @@
+[ ca ]
+default_ca = CA_default
+[ CA_default ]
+dir               = /root/ca/intermediate
+certs             = $dir/certs
+crl_dir           = $dir/crl
+new_certs_dir     = $dir/newcerts
+database          = $dir/index.txt
+serial            = $dir/serial
+crlnumber         = $dir/crlnumber
+RANDFILE          = $dir/private/.rand
+private_key       = $dir/private/intermediate.key.pem
+certificate       = $dir/certs/intermediate.cert.pem
+crl               = $dir/crl/intermediate.crl.pem
+crl_extensions    = crl_ext
+default_crl_days  = 30
+default_md        = sha256
+name_opt          = ca_default
+cert_opt          = ca_default
+default_days      = 375
+preserve          = no
+policy            = policy_loose
+[ policy_loose ]
+countryName             = optional
+stateOrProvinceName     = optional
+organizationName        = optional
+organizationalUnitName  = optional
+commonName              = supplied
+emailAddress            = optional
+
+[ req ]
+default_bits        = 4096
+default_md          = sha256
+prompt              = no
+distinguished_name  = req_distinguished_name
+string_mask         = utf8only
+[ req_distinguished_name ]
+countryName         = FR
+stateOrProvinceName = Occitanie
+organizationName    = Eduardo Pina - Inc
+commonName          = PINA Eduardo
+[ usr_cert ]
+basicConstraints = CA:FALSE
+nsCertType = client, email
+nsComment = "Certificat utilisateur"
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid,issuer
+keyUsage = critical, nonRepudiation, digitalSignature, keyEncipherment
+extendedKeyUsage = clientAuth, emailProtection
+
+[ server_cert ]
+basicConstraints = CA:FALSE
+nsCertType = server
+nsComment = "Certificat serveur"
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid,issuer
+keyUsage = critical, digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth
+[ crl_ext ]
+authorityKeyIdentifier=keyid:always
